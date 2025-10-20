@@ -189,22 +189,20 @@ do
         case 3:
 
             Console.WriteLine("\nVeículos no inventário: ");
-            veiculos.OrderBy(Veiculo => Veiculo.GetMarca());
-            pessoas.OrderBy(Pessoa => Pessoa.GetNome());
 
-            foreach (Veiculo veiculo in veiculos)
+            foreach (Veiculo veiculo in veiculos.OrderBy(v => v.GetMarca()))
             {
                 veiculo.ExibirInformacoes();
                 Console.WriteLine("---------------------");
             }
             Console.WriteLine("\nClientes cadastrados: ");
-            foreach (Pessoa pessoa in pessoas)
+            foreach (Pessoa pessoa in pessoas.OrderBy(p => p.GetNome()))
             {
                 pessoa.ExibirInformacoes();
                 Console.WriteLine("---------------------");
             }
             Console.WriteLine("\nVeiculos alugados: ");
-            foreach (Veiculo veiculo in Alugados)
+            foreach (Veiculo veiculo in Alugados.OrderBy(a => a.GetMarca()))
             {
                 veiculo.SetAlugado(pessoas.Any(pessoas => pessoas.GetVeiculosAlugados() != null && pessoas.GetVeiculosAlugados().Split(", ").Contains(veiculo.GetPlaca())));
                 if (veiculo.GetAlugado())
