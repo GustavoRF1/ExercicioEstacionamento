@@ -1,5 +1,4 @@
 ﻿using ExercicioEstacionamento;
-using System.Threading.Channels;
 
 List<Veiculo> veiculos = new List<Veiculo>();
 List<Pessoa> pessoas = new List<Pessoa>();
