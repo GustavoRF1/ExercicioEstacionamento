@@ -261,7 +261,6 @@ do
                             Console.WriteLine("Veículo alugado");
                         }
                     }
-                    Console.WriteLine("Erro");
                 }
             }
 
